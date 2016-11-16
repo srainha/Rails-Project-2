@@ -1,0 +1,5 @@
+Create New Course
+<%= simple_form_for @course, :url => courses_create_path do |c| %>
+  <%= c.input :name %>
+  <%= c.button :submit %>
+<% end %>
