@@ -1,3 +1,14 @@
 <h3>User</h3>
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<% if @user == current_user %>
+	<h4>Create study groups, events, review sessions, and more! </h4>
+ 	<%= button_to "Create an event", create_path, :class => "button medium", :method => :get %> 
+	
+
+	
+<% end %>
+
+<h4>Previous events made by you: </h4>
+	
