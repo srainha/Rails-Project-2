@@ -4,5 +4,6 @@ class CoursesController < ApplicationController
 	end
 
 	def create
+		Course.create(name: params[:courses][:name])
 	end
 end
