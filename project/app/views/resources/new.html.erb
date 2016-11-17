@@ -1,0 +1,7 @@
+<h1>Add a new resource</h1>
+<%= simple_form_for @resource, :url => resources_create_path do |r| %>
+  <%= r.input :title %>
+  <%= r.input :description %>
+  <%= r.input :link %>
+  <%= r.button :submit %>
+<% end %>
