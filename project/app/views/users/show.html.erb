@@ -3,19 +3,25 @@
 <p>Email: <%= @user.email if @user.email %></p>
 
 <% if @user == current_user %>
-	<h4>Courses:</h4>
-	<% @users.each do |user| %>
+	<h3>Courses:</h3>
+	<% @user.courses.each do |c| %>
         <tr>
-        	<%= render user %>
+          Name: <%= c.name %>;
         </tr>
-    <% end %>  
+      <% end %>
+
+ <h3>Previous events made by you: </h3>
+<% @user.events.each do |ex| %>
+        <tr>
+          Location: <%=ex.location %>
+       	  Time: <%= ex.time %>;
+        </tr>
+      <% end %>
+
 	<h4>Create study groups, events, review sessions, and more! </h4>
  	<%= button_to "Create an event", create_path, :class => "button medium", :method => :get %> 
 	<h4>Courses currently taking </h4>
- 	<%= button_to "Add Course", enter_path, :class => "button medium", :method => :get %> 
+ 	<%= button_to "Enter course name", enter_path, :class => "button medium", :method => :get %> 
 
 	
 <% end %>
-
-<h4>Previous events made by you: </h4>
-	
