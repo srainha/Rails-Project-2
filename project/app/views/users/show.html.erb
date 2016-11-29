@@ -2,7 +2,7 @@
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 
-<% if @user == current_user %>
+
 	<h3>Courses:</h3>
 	<% @user.courses.each do |c| %>
         <tr>
@@ -10,16 +10,14 @@
         </tr>
       <% end %>
 
- <h3>Previous events made by you: </h3>
-<% @user.events.each do |ex| %>
-        <tr>
-          Location: <%=ex.location %>
-       	  Time: <%= ex.time %>;
-        </tr>
-      <% end %>
+  <% if @user == current_user %>
 
 	<h4>Create study groups, events, review sessions, and more! </h4>
- 	<%= button_to "Create an event", create_path, :class => "button medium", :method => :get %> 
+ 	<%= button_to "Create an event", events_new_path, :class => "button medium", :method => :get %> 
+
+	<h4>View current and past events </h4>
+ 	<%= button_to "View events", events_index_path, :class => "button medium", :method => :get %> 
+
 	<h4>Courses currently taking </h4>
  	<%= button_to "Enter course name", enter_path, :class => "button medium", :method => :get %> 
 
