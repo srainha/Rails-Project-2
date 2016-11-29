@@ -19,6 +19,11 @@
 	<h4>Courses currently taking </h4>
  	<%= button_to "Add Course", enter_path, :class => "button medium", :method => :get %> 
 
+    <h4>Add Resources from your Google Drive or files from online</h4>
+ 	<%= button_to "Add Resources", resources_new_path, :class => "button medium", :method => :get %> 
+ 	
+ 	<h4>Available Resources</h4>
+ 	<%= button_to "View Resources", resources_index_path, :class => "button medium", :method => :get %> 
 	
 <% end %>
 

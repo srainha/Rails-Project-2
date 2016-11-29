@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   post 'create', to: 'events#create'
   root to: 'visitors#index'
   devise_for :users
+  
   resources :users
   
   get '/courses/new', to: 'courses#new'
   get '/create', to: 'events#new' #change to events#create
   post '/events/create' => 'events#create' #change to events#create
 
+  get "/resources/new", to: 'resources#new'
+  get "/resources/index", to: 'resources#index'
+  post "/resources/create", to: 'resources#index'
 
   get '/enter', to: 'courses#new' #change to events#create
   post '/courses/create', to: 'courses#create'
