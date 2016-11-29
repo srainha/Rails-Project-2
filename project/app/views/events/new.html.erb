@@ -1,0 +1,6 @@
+Create New Events
+<%= simple_form_for @event, :url => events_create_path do |e| %>
+  <%= e.input :location %>
+  <%= e.input :time %>
+  <%= e.button :submit %>
+<% end %>

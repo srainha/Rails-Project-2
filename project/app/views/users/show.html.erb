@@ -3,7 +3,21 @@
 <p>Email: <%= @user.email if @user.email %></p>
 
 <% if @user == current_user %>
-	<p>Courses:</p>  
+	<h3>Courses:</h3>
+	<% @user.courses.each do |c| %>
+        <tr>
+          Name: <%= c.name %>;
+        </tr>
+      <% end %>
+
+ <h3>Previous events made by you: </h3>
+<% @user.events.each do |ex| %>
+        <tr>
+          Location: <%=ex.location %>
+       	  Time: <%= ex.time %>;
+        </tr>
+      <% end %>
+
 	<h4>Create study groups, events, review sessions, and more! </h4>
  	<%= button_to "Create an event", create_path, :class => "button medium", :method => :get %> 
 	<h4>Courses currently taking </h4>
@@ -12,5 +26,3 @@
 	
 <% end %>
 
-<h4>Previous events made by you: </h4>
-	
