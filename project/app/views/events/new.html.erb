@@ -1,0 +1,8 @@
+<p>Create an Event</p>
+
+<%= simple_form_for @new_event, url: {action: "create"} do |f| %>
+  <%= f.input :location %>
+  <%= f.input :course %>
+  <%= f.input :time %>
+  <%= f.button :submit %>
+<% end %>
