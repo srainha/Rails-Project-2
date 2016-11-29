@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'locations/new'
+
+  get 'locations/create'
+
   get 'events/new', to: 'events#new'
   get 'events/index', to: 'events#index'
   post 'create', to: 'events#create'

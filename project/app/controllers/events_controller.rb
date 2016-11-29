@@ -9,12 +9,12 @@ class EventsController < ApplicationController
   	time = (params[:event])[:time]
   	course = (params[:event])[:course]
   	if Location.find_by(name: location).nil?
-  		location = Location.create(name: location, room: nil)
+  		location = Location.create!(name: location, room: nil)
   	else
   		location = Location.find_by(name: location)
   	end
    	if Course.find_by(name: course).nil?
-  		course = Course.create(name: course)
+  		course = Course.create!(name: course, user: current_user)
   	else
   		course = Course.find_by(name: course)
   	end
@@ -23,11 +23,10 @@ class EventsController < ApplicationController
     					 time: time, 
     					 location_id: location.id,
     					 upcoming: true)
+
     if @event.save
       redirect_to :root
       return
-    else
-      a = 1/0
     end
   end
 
