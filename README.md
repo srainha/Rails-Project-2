@@ -1,17 +1,90 @@
-# Rails-Project-2
-Create, manage, and join other students study sessions for your classes at UC Berkeley. 
+RAILS DECAL PROJECT 2 WRITE UP 
 
-This project will have users, classes, events, and locations.
 
-To set this repo up locally:
-* Make a local directory `mkdir rails-proj2`, `cd rails-proj2`
-* Intialize git `git init`
-* Create a remote pointer to this repo `git remote add origin https://github.com/srainha/Rails-Project-2.git`
-* Pull from master `git pull origin master`
+Title:​ Study Session Calendar 
 
-To make a change, remember to:
-* Pull from master to make sure you have the most recent code, this helps avoid merge conflicts `git pull origin master`
-* Make a new branch and switch to it `git checkout -b new-feature-name`
-* Add, commit, and finally push to the remote with the name of your branch `git add .` `git commit -m "Description of changes"` `git push origin new-feature-name`
-To see what files are changed/staged etc: `git status`
-To see your branch or remote name: `git branch`, `git remote`
+
+Team Members:​ Lauren Benitez, Lai Wei, Seth Rainha, Zhitong Qiu, Tasnim Khandakat 
+
+
+Demo Link:​ 
+
+
+Idea: ​An application where students can attend and create events and study sessions based on what classes they are taking. 
+
+
+Models and Description:
+
+
+User
+
+
+● has name, email, and many courses
+
+
+Course
+
+
+● has many users
+
+
+Location
+
+
+● has many events 
+
+
+Resource
+
+
+● has many users
+Event
+Belongs to user
+Belongs to location
+Belongs to course
+
+
+Features:
+
+
+● Users can log in
+
+
+● They can go on their profile and see:
+A way to create events and study sessions
+View which courses they are taking
+Which events they have already made
+
+
+● They can view people who are also using the site and have accounts made.
+
+
+	● Users can view the courses other people are taking and see their profiles. 
+
+
+
+
+Division of Labor:
+
+
+● Tasnim Khandakar: Made users
+
+
+● Lauren Benitez: Made locations
+
+
+● Lai Wei: Made courses and implemented devise
+
+
+● Seth Rainha: Made events and video and seeds file
+
+
+● Zhitong Qiu: Made resources
+
+
+
+
+
+
+
+
