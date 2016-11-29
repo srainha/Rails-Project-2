@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get '/enter', to: 'courses#new' #change to events#create
   post '/courses/create', to: 'courses#create'
+
 end
