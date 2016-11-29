@@ -9,6 +9,6 @@
 #
 
 class Course < ApplicationRecord
-	has_many :users
+	belongs_to :user
 	has_many :events
 end

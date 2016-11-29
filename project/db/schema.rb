@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20161128234312) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.string   "time"
-  end
-
-  create_table "events", force: :cascade do |t|
     t.boolean  "upcoming"
     t.integer  "user_id"
     t.integer  "location_id"

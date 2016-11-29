@@ -10,15 +10,6 @@
         </tr>
       <% end %>
 
- <h3>Previous events made by you: </h3>
-<% @user.events.each do |ex| %>
-        <tr>
-          Location: <%=ex.location %>
-       	  Time: <%= ex.time %>;
-        </tr>
-      <% end %>
-
-
 	<h4>Create study groups, events, review sessions, and more! </h4>
  	<%= button_to "Create an event", events_new_path, :class => "button medium", :method => :get %> 
 
