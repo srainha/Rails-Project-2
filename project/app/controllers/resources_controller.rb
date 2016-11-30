@@ -6,11 +6,13 @@ class ResourcesController < ApplicationController
 
     # creating a new recourse and possible group it in a course 
 	def create
-	    @resource = Resource.create(name: params[:resources][:title], user: current_user)
+		
+	    @resource = Resource.create(title: (params[:resource])[:title], description: (params[:resource])[:description], course: (params[:resource])[:course], link: (params[:resource])[:link])
 		if @resource.save
-			redirect_to user_path(current_user)
+			@resource.save!
+			redirect_to resources_index_path
 		else
-			flash[:error] = resource.errors.full_messages.to_sentence
+			flash[:error] = @resource.errors.full_messages.to_sentence
       		redirect_to resources_new_path
 		end
 	end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get "/resources/new", to: 'resources#new'
   get "/resources/index", to: 'resources#index'
-  post "/resources/create", to: 'resources#index'
+  post "/resources/create", to: 'resources#create'
 
   get '/enter', to: 'courses#new' #change to events#create
   post '/courses/create', to: 'courses#create'
